@@ -8,3 +8,5 @@ gem 'httparty'
 gem 'faker'
 gem 'guard'
 gem 'json'
+gem 'sinatra'
+gem "shotgun"

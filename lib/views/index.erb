@@ -1,0 +1,17 @@
+<html> 
+  <head> 
+    <title>The Gossip Project</title> 
+  </head> 
+  <body> 
+    <h1>Bienvenue sur notre site de potins !</h1>
+    <p>La liste des potins arrive bientôt, mais en attendant, tu peux créer un nouveau potin :</p>
+    <a href="/gossips/new/">Créer un nouveau potin</a>
+    <% gossips.each do |gossip| %> <!-- début de la boucle -->
+    <p> 
+    <%= gossip.author %> <!-- affiche l'auteur du potin -->
+    <br/> 
+    <%= gossip.content %> <!-- affiche le contenu du potin -->
+    </p> 
+    <% end %>  <!-- fin de la boucle -->  <!-- <% = %>  serta rajouter du ruby dans l'html-->
+  </body> 
+</html>

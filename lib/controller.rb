@@ -40,5 +40,5 @@ class ApplicationController < Sinatra::Base
   end
 end
 
-#lancer le servuer shitgun-p 4567
+#lancer le servuer shotgun-p 4567
 

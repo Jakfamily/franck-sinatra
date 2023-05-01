@@ -24,13 +24,16 @@ class Gossip
     return Gossip.all[id.to_i-1]
   end
 
-  def self.upgrade(author, content, id)
-    gossip_array = self.all
-		gossip_array[id.to_i].content = content
-		gossip_array[id.to_i].author = author
-		File.open("./db/gossip.csv", 'w') {|file| file.truncate(0) }
-		gossip_array.each do |gossip|
-			gossip.save
-		end
+    
+  def self.update(id, author, content)
+    all_gossips = Gossip.all
+    all_gossips[id.to_i - 1].author = author
+    all_gossips[id.to_i - 1].content = content
+  
+    CSV.open("./db/gossip.csv", "w") do |csv|
+      all_gossips.each do |gossip|
+        csv << [gossip.author, gossip.content]
+      end
+    end
   end
 end

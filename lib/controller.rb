@@ -34,6 +34,7 @@ class ApplicationController < Sinatra::Base
     puts "La base de données CSV a été mise à jour"
     redirect '/'
   end
+  run! if app_file == $0
 end
 
 

@@ -3,18 +3,24 @@
   <head>
     <title>The Gossip Project</title>
   </head>
-  <body>
-    <h1>Bienvenue sur GossipBoy !</h1>
-    <p>La liste des potins arrive bientôt, mais en attendant, tu peux créer un nouveau potin :</p>
-    <a href="/gossips/new/">Créer un nouveau potin</a>
-    
-    <%# boucle pour afficher la liste des potins %>
-    <% gossips.each do |gossip| %>
-      <p> 
-        <%= gossip.author %> <!-- affiche l'auteur du potin -->
-        <br/> 
-        <%= gossip.content %> <!-- affiche le contenu du potin -->
-      </p> 
-    <% end %>
+  <body style = "background: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);;background-size: cover; background-repeat: no-repeat; height:100%">
+    <div style = "background-color:#F9F7F4; box-shadow: 5px 5px 17px 1px rgba(159,159,159,0.38);  padding: 25px; border-radius:20px; width : 450px; margin: 50px auto">
+      <div style = "text-align:center">
+        <h1>Bienvenue sur GossipBoy !</h1>
+        <br>
+        <a href="/gossips/new/" style="text-decoration: none; color : #D16BA5; padding : 10px; border-radius: 15px; border: 2px solid #D16BA5">Créer un nouveau potin</a>
+        <br><br><br>
+        <p>La liste des potins </p>
+        <%# boucle pour afficher la liste des potins %>
+        <% gossips.each_with_index do |gossip,id| %>
+          <p> 
+            <%= gossip.author %> <!-- affiche l'auteur du potin -->
+            <br/> 
+            <%= gossip.content %> <!-- affiche le contenu du potin -->
+          </p> 
+          <br>
+           <a href="/gossips/<%= id +1 %>/edit" style="text-decoration: none; color : #86A8E7; padding : 10px; border-radius: 15px; border: 2px solid #86A8E7;">editer le potin</a>
+        <% end %>
+    </div>
   </body>
 </html>

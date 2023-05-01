@@ -22,28 +22,25 @@ class ApplicationController < Sinatra::Base
   end
 
   # Route qui affiche le détail d'un gossip
-  get '/gossips/:id/' do
-    gossip = Gossip.find(params["id"])
-    id = params['id'].to_i
-    erb :show, locals: {gossip: gossip, id: id}
+  get '/gossips/:id' do 
+    erb :show, locals: {gossip: Gossip.find(params['id']), id: params['id']}
   end
 
   # Route qui affiche le formulaire pour éditer un gossip existant
   get '/gossips/:id/edit/' do
-    gossip = Gossip.find(params["id"])
-    id = params['id'].to_i
-    erb :edit, locals: {gossip: gossip, id: id}
+    erb :edit, locals: {gossip: Gossip.find(params['id']), id: params['id']}
   end
 
   # Route qui reçoit les données du formulaire d'édition de gossip et met à jour le gossip correspondant
   post '/gossips/:id/edit/' do
     Gossip.update(params["id"], params["gossip_author"], params["gossip_content"])
-    redirect '/'
+    redirect "/gossips/#{params['id']}"
   end
 
   # Lancement de l'application
   run! if app_file == $0
 end
+
 
 
 #lancer le servuer shotgun-p 4567

@@ -2,14 +2,16 @@
 	<head>
 		<title>PAGE POTIN </title>
 	</head>
-	<body> 
-		<h1>Voici la page du potin n° <%= id  %></h1>
-		<p>L'auteur : <%= gossip.author %></p>
-		<p>Le contenu: <%= gossip.content %></p>
-    <br> 
-		<p>
-      <a href="/">Retour à la page des potins</a>
-    </p>
+	<body style = "background: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);;background-size: cover; background-repeat: no-repeat; height:100%">
+   <div style = "background-color:#F9F7F4; box-shadow: 5px 5px 17px 1px rgba(159,159,159,0.38);  padding: 25px; border-radius:20px; width : 450px; margin: 50px auto">
+    <div style ="text-align:center">
+		  <h1>Voici la page du potin n° <%= id  %></h1>
+		  <p>L'auteur : <%= gossip.author %></p>
+		  <p>Le contenu: <%= gossip.content %></p>
+      <br><br>
       <a href="/gossips/<%= id %>/edit">Editer</a>
+      <br><br><br>
+      <a href="/">Retour à la page des potins</a>
+   </div>
 	</body>
 </html>

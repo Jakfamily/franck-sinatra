@@ -41,5 +41,6 @@ class Gossip
         csv << [gossip.author, gossip.content] # réécrit tous les gossips dans le fichier
       end
     end
+    return all_gossips[id.to_i - 1] # retourne le gossip mis à jour
   end
 end

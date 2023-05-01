@@ -2,13 +2,21 @@
   <head>
     <title>Modifier un potin</title>
   </head>
-  <body >
-    <h1>Comment modifier un potin?</h1>
-    <p>Tu souhaites modifier le potin n°<%= id + 1%></p>
-    <form action='/gossips/<%= id%>/edit/' method='POST'>
-      Mise à jour de l'auteur : <input type='text' name='gossip_author' value="<%= gossip.author%>"/><br/>
-      Mise à jour du potin : <input type='text' name='gossip_content' value="<%= gossip.content%>"/><br/>
-      <input type='submit' value ="Envoyer"/>
-    </form>
+  <body style = "background: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);;background-size: cover; background-repeat: no-repeat; height:100%">
+    <div style = "background-color:#F9F7F4; box-shadow: 5px 5px 17px 1px rgba(159,159,159,0.38);  padding: 25px; border-radius:20px; width : 450px; margin: 50px auto">
+      <div style = "text-align: center">
+        <h1>Comment modifier un potin?</h1>
+        <br>
+        <p>Tu souhaites modifier le potin n°<%= id + 1%></p>
+        <br><br>
+        <form action='/gossips/<%= id %>/edit/' method='POST'>
+          Mise à jour de l'auteur : <input type='text' name='gossip_author' value="<%= gossip.author%>"/>
+          <br/><br/>
+          Mise à jour du potin : <input type='text' name='gossip_content' value="<%= gossip.content%>"/>
+          <br/><br/><br/>
+          <input type='submit' value="Envoyer" style="text-decoration: none; color : #86A8E7; padding : 10px; border-radius: 15px; border: 2px solid #86A8E7;">
+        </form>
+      </div>
+    </div>
   </body>
 </html>

@@ -7,7 +7,7 @@
       <div style = "text-align: center">
         <h1>Comment modifier un potin?</h1>
         <br>
-        <p>Tu souhaites modifier le potin n°<%= id + 1%></p>
+        <p>Tu souhaites modifier le potin n°<%= id %></p>
         <br><br>
         <form action='/gossips/<%= id %>/edit/' method='POST'>
           Mise à jour de l'auteur : <input type='text' name='gossip_author' value="<%= gossip.author%>"/>

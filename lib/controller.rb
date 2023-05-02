@@ -34,7 +34,7 @@ class ApplicationController < Sinatra::Base
   # Route qui reçoit les données du formulaire d'édition de gossip et met à jour le gossip correspondant
   post '/gossips/:id/edit/' do
     Gossip.update(params["id"], params["gossip_author"], params["gossip_content"])
-    redirect "/gossips/#{params['id']}"
+    redirect "/"
   end
 
   # Lancement de l'application

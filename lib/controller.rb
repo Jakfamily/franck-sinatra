@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
   end
 
   # Route qui affiche le détail d'un gossip
-  get '/gossips/:id' do 
+  get '/gossips/:id/' do 
     erb :show, locals: {gossip: Gossip.find(params['id']), id: params['id']}
   end
 
@@ -40,6 +40,7 @@ class ApplicationController < Sinatra::Base
   # Lancement de l'application
   run! if app_file == $0
 end
+
 
 
 
